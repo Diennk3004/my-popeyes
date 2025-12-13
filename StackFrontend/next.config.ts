@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import "./envConfig.ts";
 const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   images: {
@@ -7,11 +8,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
-        port: "8003",
+        port: process.env.NEXT_PUBLIC_BACKEND_PORT,
         pathname: "/images/**"
       }
     ]
-  },
-  output: "standalone"
+  }
 };
 export default withNextIntl(nextConfig);
