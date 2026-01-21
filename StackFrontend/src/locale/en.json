@@ -1,10 +1,9 @@
 {
   "page_translate": {
-    "e_voucher_code": "E-voucher code",
-    "promotions": "Promotions",
-    "menu": "Menu",
+    "Promotions": "Promotions",
+    "Menu": "Menu",
+    "Our stores": "Our stores",
     "Order tracking": "Order tracking",
-    "Our locations": "Our locations",
-    "empty_cart_place_order": "Empty Cart. Please place your order"
+    "Party": "Party"
   }
 }

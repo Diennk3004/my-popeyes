@@ -1,8 +1,13 @@
 import localFont from "next/font/local";
-import { Jost } from "next/font/google";
+import { Jost, Roboto } from "next/font/google";
 const jostGoogle = Jost({
   subsets: ["latin"],
   variable: "--font-jost"
+});
+const robotoGoogle = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-roboto"
 });
 const genralSans = localFont({
   src: [
@@ -48,4 +53,4 @@ const kontrap = localFont({
   ],
   variable: "--font-kontrap"
 });
-export { genralSans, kontrap, jostGoogle };
+export { genralSans, kontrap, jostGoogle, robotoGoogle };

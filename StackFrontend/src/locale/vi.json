@@ -1,10 +1,9 @@
 {
   "page_translate": {
-    "e_voucher_code": "Mã giảm giá",
-    "promotions": "Khuyến mãi",
-    "menu": "Thực đơn",
-    "Order tracking": "Theo dõi đơn hàng",
-    "Our locations": "Danh sách cửa hàng",
-    "empty_cart_place_order": "Empty Cart. Please place your order"
+    "Promotions": "Promotions",
+    "Menu": "Menu",
+    "Our stores": "Our stores",
+    "Order tracking": "Order tracking",
+    "Party": "Party"
   }
 }

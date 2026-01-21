@@ -1,52 +1,56 @@
+"use client";
 import clsx from "clsx";
 import React from "react";
-
-const ExampleTest = () => {
+import { Link } from "@/utils";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { UserOutlined, ShoppingCartOutlined, CloseOutlined, MenuOutlined } from "@ant-design/icons";
+import styleHeader from "@/scss/header.module.scss";
+const HomePage = () => {
+  const t = useTranslations("page_translate");
   return (
     <React.Fragment>
-      <div className={clsx(["h-screen", "bg-linear-to-br", "from-sky-900", "to-sky-400", "flex", "justify-center", "items-center", "pl-3", "pr-3"])}>
-        <div className={clsx(["max-w-4xl", "bg-white", "rounded-md", "pl-5", "pr-5", "pt-5", "pb-5"])}>
-          <div>
-            <div>
-              <strong>Fullname:</strong>&nbsp;NGUYỄN KIM ĐIỀN
-            </div>
-            <div>
-              <strong>Position:</strong>&nbsp;FULLSTACK DEVELOPER
-            </div>
-            <div>
-              <strong>Example test:</strong>&nbsp;ROLE MANAGEMENT
-            </div>
-            <div>
-              <strong>Techstack:</strong>&nbsp;React + Laravel
-            </div>
-            <div>
-              <strong>Source code:</strong>&nbsp;<span className={clsx(["text-red-500"])}>https://github.com/Diennk3004/my-tiximax</span>
-            </div>
-          </div>
-          <div>
-            <div className={clsx(["mt-8"])}>
-              <strong>Step1:</strong>&nbsp;git clone git@github.com:Diennk3004/my-tiximax.git
-            </div>
-            <div className={clsx(["mt-8"])}>
-              <strong>Step2:</strong>&nbsp;Run command line below
-            </div>
-            <div className={clsx(["mt-2", "bg-green-100", "border", "border-green-400", "pl-3", "pr-3", "pt-2", "pb-2", "rounded-md"])}>docker compose -p env_production_my_tiximax down && docker image prune -a -f && docker builder prune -a -f && docker compose -p env_production_my_tiximax -f docker-compose.env.production.yaml up -d</div>
-            <div className={clsx(["mt-8"])}>
-              <strong>Step3:</strong>&nbsp;Access http://localhost:2512
-            </div>
-            <div className={clsx(["mt-8"])}>
-              <strong>Step4:</strong>&nbsp;Data
-            </div>
-            <div className={clsx(["mt-2"])}>
-              <div>User1: diennk - 246357</div>
-              <div>User2: hongnt - 246357</div>
-              <div>User3: dungdt - 246357</div>
-            </div>
-          </div>
+      <header className={clsx(["bg-orange-400", "pl-45", "pr-45", "max-md:pt-2", "max-md:pb-2", "flex", "justify-between", "items-center"])}>
+        <div>
+          <div className={clsx(["text-white", "text-center", "font-bold", "max-md:text-sm", "text-2xl", "font-(family-name:--font-jost)"])}>GÀ RÁN</div>
+          <div className={clsx(["text-white", "font-bold", "max-md:text-sm", "text-2xl", "font-(family-name:--font-jost)"])}>POPEYES</div>
         </div>
-      </div>
+        <ul className={clsx(["flex", "max-md:hidden", "gap-x-3", "h-full", styleHeader.headerList])}>
+          <li>
+            <Link href={{ pathname: "/" }} className={clsx(["no-underline", "uppercase", "font-bold", "text-white", "block"])}>
+              {t("Promotions")}
+            </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: "/" }} className={clsx(["no-underline", "uppercase", "font-bold", "text-white", "block"])}>
+              {t("Menu")}
+            </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: "/" }} className={clsx(["no-underline", "uppercase", "font-bold", "text-white", "block"])}>
+              {t("Our stores")}
+            </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: "/" }} className={clsx(["no-underline", "uppercase", "font-bold", "text-white", "block"])}>
+              {t("Order tracking")}
+            </Link>
+          </li>
+          <li>
+            <Link href={{ pathname: "/" }} className={clsx(["no-underline", "uppercase", "font-bold", "text-white", "block"])}>
+              {t("Party")}
+            </Link>
+          </li>
+        </ul>
+        <div className={clsx(["flex", "gap-x-5", "text-white", "items-center"])}>
+          <div>VI</div>
+          <ShoppingCartOutlined className={clsx(["max-md:text-2xl", "text-4xl"])} />
+          <UserOutlined className={clsx(["max-md:text-2xl", "text-4xl"])} />
+          <ShoppingCartOutlined className={clsx(["max-md:hidden", "text-4xl"])} />
+        </div>
+      </header>
     </React.Fragment>
   );
 };
 
-export default ExampleTest;
+export default HomePage;
