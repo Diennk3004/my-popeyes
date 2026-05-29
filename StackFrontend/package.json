@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:production": "dotenvx run -f .env.production -- next build && next start"
+    "start:production": "dotenvx run -f .env.production -- next build && next start"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
