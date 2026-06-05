@@ -3,8 +3,9 @@ import { ClientProvider } from "@/providers";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import "@/scss/app.css";
 import stylesContainer from "@/scss/container.module.scss";
-import { genralSans, jostGoogle, kontrap } from "@/utils";
+import { genralSans, jostGoogle, kontrap, beVietnamPro } from "@/utils";
 import clsx from "clsx";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Footer } from "@/components";
 import type { Metadata } from "next";
 import React from "react";
@@ -20,14 +21,16 @@ const RootLayout: React.FC<React.PropsWithChildren<Props>> = async ({ children, 
   setRequestLocale(locale);
   const messages = await getMessages();
   return (
-    <html lang={locale} className={`${genralSans.variable} ${kontrap.variable} ${jostGoogle.variable}`}>
+    <html lang={locale} className={`${genralSans.variable} ${kontrap.variable} ${jostGoogle.variable} ${beVietnamPro.variable}`}>
       <body>
         <ClientProvider locale={locale} messages={messages}>
-          <div className={clsx([stylesContainer.container, "ml-auto", "mr-auto"])}>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
+          <AntdRegistry>
+            <div className={clsx([stylesContainer.container, "ml-auto", "mr-auto"])}>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </AntdRegistry>
         </ClientProvider>
       </body>
     </html>

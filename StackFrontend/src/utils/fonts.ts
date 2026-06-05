@@ -53,4 +53,19 @@ const kontrap = localFont({
   ],
   variable: "--font-kontrap"
 });
-export { genralSans, kontrap, jostGoogle, robotoGoogle };
+const beVietnamPro = localFont({
+  src: [
+    {
+      path: "./../fonts/BeVietnamPro/BeVietnamPro-Regular.ttf",
+      weight: "400",
+      style: "normal"
+    },
+    {
+      path: "./../fonts/BeVietnamPro/BeVietnamPro-Bold.ttf",
+      weight: "700",
+      style: "normal"
+    }
+  ],
+  variable: "--font-beVietnamPro"
+});
+export { genralSans, kontrap, jostGoogle, robotoGoogle, beVietnamPro };

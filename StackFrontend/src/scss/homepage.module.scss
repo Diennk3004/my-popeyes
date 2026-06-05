@@ -16,7 +16,6 @@ $colorRight: #82828214;
         animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
       }
       .mask {
-        /* background: linear-gradient($maskRotate, $colorLeft 0%, $colorCenter 50%, $colorRight 100%); */
         animation: myAnimationSlider;
         animation-duration: 0.2s;
         animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -78,5 +77,17 @@ $colorRight: #82828214;
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+.maskModal {
+  background: rgba(0, 0, 0, 0.423);
+}
+.menuSidebar {
+  li {
+    a {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      display: block;
+    }
   }
 }
