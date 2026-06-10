@@ -79,15 +79,147 @@ $colorRight: #82828214;
     transform: translateX(0);
   }
 }
-.maskModal {
-  background: rgba(0, 0, 0, 0.423);
-}
+
 .menuSidebar {
   li {
+    position: relative;
+    span {
+      a {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        display: block;
+      }
+      button {
+        span {
+          &.arrowDown {
+            &::before {
+              content: "";
+              display: block;
+              width: 0.75rem;
+              height: 0.75rem;
+              border-top: 2px solid black;
+              border-right: 2px solid black;
+              transform: rotate(135deg);
+              animation-name: myAnimationArrowDown;
+              animation-duration: 0.5s;
+            }
+          }
+          &.arrowUp {
+            &::before {
+              content: "";
+              display: block;
+              width: 0.75rem;
+              height: 0.75rem;
+              border-top: 2px solid black;
+              border-right: 2px solid black;
+              transform: rotate(-45deg);
+              animation-name: myAnimationArrowUp;
+              animation-duration: 0.5s;
+            }
+          }
+        }
+      }
+    }
     a {
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
       display: block;
     }
+    ul {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: translateY(-1%);
+      z-index: -1;
+      transition:
+        position 0.2s,
+        opacity 0.2s,
+        transform 0.5s;
+      &.active {
+        position: relative;
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 1;
+      }
+    }
+  }
+}
+@keyframes myAnimationArrowDown {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(135deg);
+  }
+}
+@keyframes myAnimationArrowUp {
+  from {
+    transform: rotate(135deg);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+.modal {
+  z-index: -9999;
+  &.active {
+    z-index: 50;
+  }
+  .maskModal {
+    background: rgba(0, 0, 0, 0.423);
+    opacity: 0;
+    transition: opacity 0.5s;
+    &.active {
+      opacity: 1;
+    }
+  }
+  .dialog {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition:
+      opacity 0.5s,
+      transform 0.5s;
+    &.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+.sectionIntro {
+  &::before {
+    background-image: url("../images/section-intro.png");
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+}
+.bgDiem {
+  background-image: linear-gradient(to bottom, #0000007a, transparent);
+}
+.footerTitle {
+  padding-bottom: 0.625rem;
+  margin-bottom: 1rem;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5.25rem;
+    height: 0.2rem;
+    content: " ";
+    background-color: oklch(64.6% 0.222 41.116);
+  }
+}
+.footerMenu {
+  li {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 }
